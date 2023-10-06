@@ -13,7 +13,7 @@ class LearnPage extends StatelessWidget {
           decoration: InputDecoration(
             hintText: 'Search',
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(30.0),
             ),
             suffixIcon: Icon(Icons.search),
           ),
