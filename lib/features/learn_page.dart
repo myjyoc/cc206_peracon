@@ -42,15 +42,15 @@ class LearnPage extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: [
                 Image.network(
-                  'https://media.philstar.com/photos/2023/10/05/sara-nationalistic_2023-10-05_16-19-32.jpg',
-                  height: 200.0,
+                  'https://www.signedmarco.com/wp-content/uploads/2023/02/financialliteracySIGNEDMARCO-1.webp',
+                  height: 210.0,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
                 Container(
                   color: Colors.black.withOpacity(0.5),
                   child: Text(
-                    'Sara says critics of confidential fund are enemies of the nation for obstructing peace',
+                    'Empowering the Future: Bridging the Gap with Financial Education for Filipino Millennials',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -69,14 +69,14 @@ class LearnPage extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text('Category 1'),
+                  child: Text('Budgeting'),
                 ),
               ),
               SizedBox(width: 10.0),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text('Category 2'),
+                  child: Text('Debt Management'),
                 ),
               ),
             ],
@@ -92,15 +92,15 @@ class LearnPage extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   children: [
                     Image.network(
-                      'https://media.philstar.com/photos/2023/10/02/jenny-mon-afternoon_2023-10-02_17-32-00.jpg',
-                      height: 150.0,
+                      'https://media.philstar.com/images/the-philippine-star/lifestyle/arts-and-culture/20170528/PHILSTAR/BUSINESS%20FEATURES/usual/financial.jpg',
+                      height: 180.0,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
                     Container(
                       color: Colors.black.withOpacity(0.5),
                       child: Text(
-                        'PAGASA: Typhoon Jenny steadily strengthens over Philippine Sea',
+                        'Filipinos Financial Literacy: What Numbers Say and Why It Matters',
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
@@ -119,15 +119,15 @@ class LearnPage extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   children: [
                     Image.network(
-                      'https://media.philstar.com/photos/2023/06/13/18_2023-06-13_22-20-23.jpg',
-                      height: 150.0,
+                      'https://media.philstar.com/photos/2023/05/22/1_2023-05-22_15-11-18276_thumbnail.jpg',
+                      height: 180.0,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
                     Container(
                       color: Colors.black.withOpacity(0.5),
                       child: Text(
-                        'Sara denies causing Commonwealth traffic jam; cop in viral video now under probe',
+                        'Empowering the Future: Educators Focus on Instilling Financial Education Among Youth',
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
