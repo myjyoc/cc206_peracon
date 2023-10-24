@@ -5,86 +5,95 @@ class LearnPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.transparent,
-        title: TextField(
-          decoration: InputDecoration(
-            hintText: 'Search',
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30.0),
-            ),
-            suffixIcon: Icon(Icons.search),
-          ),
-          onChanged: (value) {
-            // Perform search here
-          },
-        ),
-        actions: [
-          IconButton(
-            icon: CircleAvatar(
-              backgroundColor: Colors.black,
-              child: Icon(Icons.person, color: Colors.white),
-            ),
-            onPressed: () {
-              // profile action here
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          // Headline News Section
-          Container(
-            margin: EdgeInsets.all(16.0),
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Image.network(
-                  'https://www.signedmarco.com/wp-content/uploads/2023/02/financialliteracySIGNEDMARCO-1.webp',
-                  height: 210.0,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-                Container(
-                  color: Colors.black.withOpacity(0.5),
-                  child: Text(
-                    'Empowering the Future: Bridging the Gap with Financial Education for Filipino Millennials',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          // Category Buttons Section
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+          title: Row(
             children: [
               Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Budgeting'),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.0),
+                    border: Border.all(color: Colors.grey),
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      border: InputBorder.none,
+                      suffixIcon: Icon(Icons.search),
+                      contentPadding: EdgeInsets.fromLTRB(10, 15, 0, 0),
+                    ),
+                    onChanged: (value) {
+                      // Perform search here
+                    },
+                  ),
                 ),
               ),
-              SizedBox(width: 10.0),
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Debt Management'),
+              IconButton(
+                icon: CircleAvatar(
+                  backgroundColor: Colors.black,
+                  child: Icon(Icons.person, color: Colors.white),
                 ),
+                onPressed: () {
+                  // Profile action here
+                },
               ),
             ],
           ),
-
-          // Other News Section
-          Column(
+        ),
+        body: SingleChildScrollView(
+          child: Column(
             children: [
+              // Headline News Section
+              Container(
+                margin: EdgeInsets.all(16.0),
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Image.network(
+                      'https://cf.ltkcdn.net/family/images/orig/277805-1600x1066-filipino-culture-traditions.jpg',
+                      height: 210.0,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      color: Colors.black.withOpacity(0.5),
+                      child: Text(
+                        'Empowering the Future: Bridging the Gap with Financial Education for Filipino Millennials',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // Category Buttons Section
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Budgeting'),
+                    ),
+                  ),
+                  SizedBox(width: 10.0),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Debt Management'),
+                    ),
+                  ),
+                ],
+              ),
+
+              // Other News Section
               // News 1
               Container(
                 margin: EdgeInsets.all(16.0),
@@ -140,7 +149,7 @@ class LearnPage extends StatelessWidget {
               ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }
