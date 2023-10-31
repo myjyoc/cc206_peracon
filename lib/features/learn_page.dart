@@ -10,10 +10,12 @@ class LearnPage extends StatelessWidget {
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: Colors.transparent,
-          title: Row(
+          title: Container(
+          child: Row(
             children: [
               Expanded(
                 child: Container(
+                  
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.0),
                     border: Border.all(color: Colors.grey),
@@ -42,6 +44,7 @@ class LearnPage extends StatelessWidget {
               ),
             ],
           ),
+        ),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -78,20 +81,32 @@ class LearnPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: ElevatedButton(
+                    child: Container(
+                   margin: EdgeInsets.only(left: 8.0, right: 8.0),
+                   child: ElevatedButton(
                       onPressed: () {},
+                      style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                      ),
                       child: Text('Budgeting'),
                     ),
                   ),
+                  ), 
                   SizedBox(width: 10.0),
                   Expanded(
+                    child: Container(
+                    margin: EdgeInsets.only(left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {},
+                      style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                     ),
                       child: Text('Debt Management'),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
+            ),
 
               // Other News Section
               // News 1
