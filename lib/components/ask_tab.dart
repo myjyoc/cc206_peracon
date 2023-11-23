@@ -15,57 +15,58 @@ class _AskPageState extends State<AskPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60.0),
-          child: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0.0, // Remove app bar shadow
-            leading: IconButton(
-              icon: Icon(Icons.menu, color: Colors.black),
-              onPressed: () {
-                // Handle menu button press
-              },
-            ),
-            actions: [
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+          title: Row(
+            children: [
+              IconButton(
+                icon: Icon(Icons.menu, color: Colors.black),
+                onPressed: () {
+                  // Handle menu button press
+                },
+              ),
+              Expanded(
+                child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      // Handle "New Chat" tap
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        border: Border.all(color: Colors.grey),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'New Chat',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          SizedBox(width: 5.0),
+                          Icon(Icons.add, color: Colors.black, size: 24.0),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               IconButton(
                 icon: CircleAvatar(
                   backgroundColor: Colors.black,
-                  child: Icon(Icons.person, color: Colors.white),
+                  child: Icon(Icons.person, color: Colors.white, size: 24.0),
                 ),
                 onPressed: () {
                   // Handle profile button press
                 },
               ),
             ],
-            title: Center(
-              child: InkWell(
-                onTap: () {
-                  // Handle "New Chat" tap
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50.0),
-                    border: Border.all(color: Colors.grey),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center, // Center the content horizontally
-                    children: [
-                      Text(
-                        'New Chat',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(width: 5.0),
-                      Icon(Icons.add, color: Colors.black),
-                    ],
-                  ),
-                ),
-              ),
-            ),
           ),
         ),
         body: Column(
@@ -88,19 +89,19 @@ class _AskPageState extends State<AskPage> {
           type: BottomNavigationBarType.fixed,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home, size: 24.0),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.book),
+              icon: Icon(Icons.book, size: 24.0),
               label: 'Learn',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.question_answer),
+              icon: Icon(Icons.question_answer, size: 24.0),
               label: 'Ask',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.analytics),
+              icon: Icon(Icons.analytics, size: 24.0),
               label: 'Analytics',
             ),
           ],
@@ -108,7 +109,20 @@ class _AskPageState extends State<AskPage> {
           unselectedItemColor: Colors.grey,
           currentIndex: 2,
           onTap: (int index) {
-            // Handle navigation to different tabs
+            switch (index) {
+              case 0:
+                Navigator.pushReplacementNamed(context, '/home');
+                break;
+              case 1:
+                Navigator.pushReplacementNamed(context, '/learn');
+                break;
+              case 2:
+                
+                break;
+              case 3:
+                Navigator.pushReplacementNamed(context, '/analytics');
+                break;
+            }
           },
         ),
       ),

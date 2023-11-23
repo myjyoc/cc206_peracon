@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
               IconButton(
                 icon: CircleAvatar(
                   backgroundColor: Colors.black,
-                  child: Icon(Icons.person, color: Colors.white),
+                  child: Icon(Icons.person, color: Colors.white, size: 24.0),
                 ),
                 onPressed: () {
                   // Profile action here
@@ -60,8 +60,9 @@ class HomePage extends StatelessWidget {
                 margin: EdgeInsets.all(16.0),
                 padding: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(12.0),
+                  border: Border.all(color: Colors.grey),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,15 +73,14 @@ class HomePage extends StatelessWidget {
                         Text(
                           'My Balance',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Color(0xFF215757),
                             fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
                           'P100,000', // Replace with actual balance
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Color(0xFF215757),
                             fontSize: 24.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -91,10 +91,10 @@ class HomePage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        _buildCircleIcon(Icons.account_balance, 'Savings', 'P60,000'),
-                        _buildCircleIcon(Icons.attach_money, 'Income', 'P20,000'),
-                        _buildCircleIcon(Icons.money_off, 'Expenses', 'P10,000'),
-                        _buildCircleIcon(Icons.credit_card, 'Debts', 'P30,000'),
+                        _buildCircleIcon(Icons.account_balance, 'Savings', 'P60,000', Color(0xFF27C153), Color(0xFFE7F7EC)),
+                        _buildCircleIcon(Icons.attach_money, 'Income', 'P20,000', Color(0xFFD64BC2), Color(0xFFF3E7F8)),
+                        _buildCircleIcon(Icons.money_off, 'Expenses', 'P10,000', Color(0xFFFF4437), Color(0xFFFFEBEA)),
+                        _buildCircleIcon(Icons.credit_card, 'Debts', 'P30,000', Colors.black, Colors.grey[300]!),
                       ],
                     ),
                   ],
@@ -113,9 +113,9 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               // Two boxes with icons and finance tips text
-              _buildTipsBox(Icons.home, 'Income Tip', "You're spending a significant portion of your income on housing. Consider exploring ways to reduce your housing costs, such as downsizing, finding roommates, or negotiating your rent."),
+              _buildTipsBox(Icons.home, 'Income Tip', "You're spending a significant portion of your income on housing. Consider exploring ways to reduce your housing costs, such as downsizing, finding roommates, or negotiating your rent.", Colors.blue),
               SizedBox(height: 8.0),
-              _buildTipsBox(Icons.trending_down, 'Debt Tip', "You have the opportunity to pay your debt using your available savings. Consider allocating a portion of your savings towards debt repayment. By utilizing your savings to pay off your debt, you can eliminate the financial burden sooner and achieve peace of mind."),
+              _buildTipsBox(Icons.trending_down, 'Debt Tip', "You have the opportunity to pay your debt using your available savings. Consider allocating a portion of your savings towards debt repayment. By utilizing your savings to pay off your debt, you can eliminate the financial burden sooner and achieve peace of mind.", Colors.orange),
 
               // Goals Section
               Padding(
@@ -155,40 +155,51 @@ class HomePage extends StatelessWidget {
           type: BottomNavigationBarType.fixed, // Ensures equal space for all tabs
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home, size: 24.0),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.book),
+              icon: Icon(Icons.book, size: 24.0),
               label: 'Learn',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.question_answer),
+              icon: Icon(Icons.question_answer, size: 24.0),
               label: 'Ask',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.analytics),
+              icon: Icon(Icons.analytics, size: 24.0),
               label: 'Analytics',
             ),
           ],
-          selectedItemColor: Colors.blue,
+          selectedItemColor: Color.fromRGBO(16, 114, 86, 0.912),
           unselectedItemColor: Colors.grey,
           currentIndex: 0, // The index of the current tab (Home in this case)
           onTap: (int index) {
-            // Handle navigation to different tabs
-            // You can use a Navigator or any other navigation logic here
+            switch (index) {
+              case 0:
+                break;
+              case 1:
+                Navigator.pushReplacementNamed(context, '/learn');
+                break;
+              case 2:
+                Navigator.pushReplacementNamed(context, '/ask');
+                break;
+              case 3:
+                Navigator.pushReplacementNamed(context, '/analytics');
+                break;
+            }
           },
         ),
       ),
     );
   }
 
-  Widget _buildTipsBox(IconData icon, String title, String content) {
+  Widget _buildTipsBox(IconData icon, String title, String content, Color boxColor) {
     return Container(
       padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
       margin: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 3.0),
       decoration: BoxDecoration(
-        color: Colors.grey[200],
+        color: boxColor,
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Row(
@@ -203,7 +214,7 @@ class HomePage extends StatelessWidget {
             child: Icon(
               icon,
               size: 30.0,
-              color: Colors.blue,
+              color: boxColor,
             ),
           ),
           SizedBox(width: 16.0),
@@ -225,20 +236,20 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildCircleIcon(IconData icon, String label, String figure) {
+  Widget _buildCircleIcon(IconData icon, String label, String figure, Color iconColor, Color bgColor) {
     return Column(
       children: [
         Container(
           margin: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 3.0),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white,
+            color: bgColor,
           ),
           padding: EdgeInsets.all(12.0),
           child: Icon(
             icon,
             size: 30.0,
-            color: Colors.blue,
+            color: iconColor,
           ),
         ),
         SizedBox(height: 4.0),
@@ -286,7 +297,7 @@ class HomePage extends StatelessWidget {
                     child: Icon(
                       icon,
                       size: 30.0,
-                      color: Colors.blue,
+                      color: Color(0xFF215757),
                     ),
                   ),
                   SizedBox(width: 16.0),
@@ -318,7 +329,7 @@ class HomePage extends StatelessWidget {
             style: TextStyle(
               fontSize: 14.0,
               fontWeight: FontWeight.bold,
-              color: Colors.blue,
+              color: Color(0xFF215757),
             ),
           ),
         ],

@@ -1,3 +1,4 @@
+import 'package:cc206_peracon/components/analytics_tab.dart';
 import 'package:cc206_peracon/components/ask_tab.dart';
 import 'package:cc206_peracon/components/home_tab.dart';
 import 'package:cc206_peracon/features/learn_page.dart';
@@ -18,12 +19,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: '/AskPage',// Create the routes here
+      initialRoute: '/home',// Create the routes here
       routes: {
-        '/HomePage':(BuildContext ctx) => HomePage(),
-        '/LearnPage':(BuildContext ctx) => LearnPage(),
-        '/AskPage':(BuildContext ctx) => AskPage(),
-        '/LearnPage':(BuildContext ctx) => LearnPage(),
+        '/home':(BuildContext ctx) => HomePage(),
+        '/learn':(BuildContext ctx) => LearnPage(),
+        '/ask':(BuildContext ctx) => AskPage(),
+        '/analytics':(BuildContext ctx) => AnalyticsPage(),
+
+
 
       },
     );
