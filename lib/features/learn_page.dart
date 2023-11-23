@@ -26,6 +26,7 @@ class LearnPage extends StatelessWidget {
                       contentPadding: EdgeInsets.fromLTRB(10, 15, 0, 0),
                       hintStyle: TextStyle(color: Color(0xFF215757)),
                     ),
+                    cursorColor: Colors.black,
                     onChanged: (value) {
                       // Perform search here
                     },
@@ -56,6 +57,7 @@ class LearnPage extends StatelessWidget {
                     Text(
                       'Recommended for You',
                       style: TextStyle(
+                        fontFamily: 'Poppins',
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -67,7 +69,8 @@ class LearnPage extends StatelessWidget {
                       child: Text(
                         'See All',
                         style: TextStyle(
-                          color: const Color(0xFF215757),
+                           fontSize: 17.0,
+                          color: Color.fromARGB(192, 177, 157, 23),
                         ),
                       ),
                     ),
@@ -109,6 +112,7 @@ class LearnPage extends StatelessWidget {
                           child: Text(
                             'Empowering the Future: Bridging the Gap with Financial Education for Filipino Millennials',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -155,7 +159,7 @@ class LearnPage extends StatelessWidget {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          Color(0xFF215757),
+                          Color.fromARGB(255, 255, 255, 255),
                         ),
                         minimumSize: MaterialStateProperty.all(Size(90.0, 1.0)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -167,7 +171,8 @@ class LearnPage extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 10.0),
                         ),
                       ),
-                      child: Text('Saving'),
+                      child: Text('Saving',
+                      style: TextStyle(color: Colors.black),),
                     ),
                     SizedBox(width: 10.0),
                     ElevatedButton(
@@ -176,7 +181,7 @@ class LearnPage extends StatelessWidget {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          Color(0xFF215757),
+                          Color.fromARGB(255, 255, 255, 255),
                         ),
                         minimumSize: MaterialStateProperty.all(Size(90.0, 1.0)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -188,7 +193,8 @@ class LearnPage extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 10.0),
                         ),
                       ),
-                      child: Text('Insurance'),
+                      child: Text('Insurance',
+                      style: TextStyle(color: Colors.black),),
                     ),
                     SizedBox(width: 10.0),
                     ElevatedButton(
@@ -197,7 +203,7 @@ class LearnPage extends StatelessWidget {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          Color(0xFF215757),
+                          Color.fromARGB(255, 255, 255, 255),
                         ),
                         minimumSize: MaterialStateProperty.all(Size(90.0, 1.0)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -209,7 +215,9 @@ class LearnPage extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 10.0),
                         ),
                       ),
-                      child: Text('Taxes'),
+                      child: Text('Taxes',
+                      style: TextStyle(color: Colors.black),
+                      ),
                     ),
                     SizedBox(width: 10.0),
                     ElevatedButton(
@@ -218,7 +226,7 @@ class LearnPage extends StatelessWidget {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          Color(0xFF215757),
+                          Color.fromARGB(255, 255, 255, 255),
                         ),
                         minimumSize: MaterialStateProperty.all(Size(130.0, 1.0)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -230,7 +238,8 @@ class LearnPage extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 10.0),
                         ),
                       ),
-                      child: Text('Behavioral Finance'),
+                      child: Text('Behavioral Finance',
+                      style: TextStyle(color: Colors.black),),
                     ),
                   ],
                 ),
@@ -273,6 +282,7 @@ class LearnPage extends StatelessWidget {
                             child: Text(
                               'Filipinos Financial Literacy: What Numbers Say and Why It Matters',
                               style: TextStyle(
+                                fontFamily: 'Poppins',
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -322,6 +332,7 @@ class LearnPage extends StatelessWidget {
                             child: Text(
                               'Empowering the Future: Educators Focus on Instilling Financial Education Among Youth',
                               style: TextStyle(
+                                fontFamily: 'Poppins',
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
