@@ -33,10 +33,12 @@ class AnalyticsPage extends StatelessWidget {
                     Text(
                       'Analytics',
                       style: TextStyle(
-                        fontSize: 20.0,
+                        fontFamily: 'Poppins',
+                        fontSize: 35.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
+                       textAlign: TextAlign.center,
                     ),
                   ],
                 ),
@@ -71,7 +73,7 @@ class AnalyticsPage extends StatelessWidget {
                         },
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromRGBO(0, 0, 0, 1), // #215757
+                            Color(0xFF215757), // #215757
                           ),
                           minimumSize: MaterialStateProperty.all(Size(160.0, 40.0)),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -97,7 +99,7 @@ class AnalyticsPage extends StatelessWidget {
                         },
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromRGBO(33, 87, 87, 1), // #215757
+                            Color.fromRGBO(255, 255, 255, 1), // #215757
                           ),
                           minimumSize: MaterialStateProperty.all(Size(160.0, 40.0)),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -109,7 +111,10 @@ class AnalyticsPage extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
                           ),
                         ),
-                        child: Text('Debt-to-Income Ratio'),
+                        child: Text('Debt-to-Income Ratio',
+                        style: TextStyle(
+                            color: Colors.black,
+                          ),),
                       ),
                       SizedBox(width: 10.0),
                       ElevatedButton(
@@ -118,7 +123,7 @@ class AnalyticsPage extends StatelessWidget {
                         },
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromRGBO(33, 87, 87, 1), // #215757
+                            Color.fromRGBO(255, 255, 255, 1), // #215757
                           ),
                           minimumSize: MaterialStateProperty.all(Size(160.0, 40.0)),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -130,7 +135,10 @@ class AnalyticsPage extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
                           ),
                         ),
-                        child: Text('Daily Trend Analysis'),
+                        child: Text('Daily Trend Analysis',
+                        style: TextStyle(
+                            color: Colors.black,
+                          ),),
                       ),
                     ],
                   ),
@@ -172,7 +180,7 @@ class AnalyticsPage extends StatelessWidget {
                 ),
                 child: Text(
                   "You're spending a significant portion of your income on housing. Consider exploring ways to reduce your housing costs, such as downsizing, finding roommates, or negotiating your rent. Additionally, you can explore alternative housing options such as shared living spaces or looking for more affordable neighborhoods. By finding creative solutions to lower your housing expenses, you can free up more funds for savings, debt repayment, or other financial goals.",
-                  style: TextStyle(fontSize: 16.0, color: const Color.fromARGB(255, 0, 0, 0)),
+                  style: TextStyle( fontFamily: 'Poppins', fontSize: 14.0, color: const Color.fromARGB(255, 0, 0, 0)),
                 ),
               ),
             ],
@@ -198,7 +206,7 @@ class AnalyticsPage extends StatelessWidget {
               label: 'Analytics',
             ),
           ],
-          selectedItemColor: Color.fromRGBO(16, 114, 86, 0.912),
+          selectedItemColor: Color(0xFF215757),
           unselectedItemColor: Colors.grey,
           currentIndex: 3,
           onTap: (int index) {
