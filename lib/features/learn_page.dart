@@ -22,8 +22,10 @@ class LearnPage extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: 'Search',
                       border: InputBorder.none,
-                      suffixIcon: Icon(Icons.search),
+                      suffixIcon: Icon(Icons.search, 
+                      color: Color.fromARGB(255, 33, 243, 40)),
                       contentPadding: EdgeInsets.fromLTRB(10, 15, 0, 0),
+                       hintStyle: TextStyle(color: Colors.green), // Set hint text color to green
                     ),
                     onChanged: (value) {
                       // Perform search here
@@ -66,7 +68,7 @@ class LearnPage extends StatelessWidget {
                       child: Text(
                         'See All',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: const Color.fromARGB(255, 33, 243, 40),
                         ),
                       ),
                     ),
@@ -108,7 +110,8 @@ class LearnPage extends StatelessWidget {
 
               // Category Buttons Section
               Container(
-                height: 50.0,
+               height: 50.0,
+                margin: EdgeInsets.all(16.0),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
@@ -116,35 +119,108 @@ class LearnPage extends StatelessWidget {
                       onPressed: () {
                         // Handle category button click
                       },
-                      child: Text('Category 1'),
+                      style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                      Color.fromRGBO(0, 174, 78, 1),
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
+                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                     RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(30.0), 
+                  ),
+                ),
+                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+               EdgeInsets.all(15.0), // Add margin around the corners
+             ),
+              ),
+                      child: Text('Budgeting'),
+                    ),
+                    SizedBox(width: 5.0),
+                    SizedBox(height: 5.0),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle category button click
+                      },
+                      style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                      Color.fromRGBO(0, 174, 78, 1),
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
+                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                     RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(30.0), 
+                  ),
+                ),
+                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+               EdgeInsets.all(15.0), // Add margin around the corners
+             ),
+              ),
+                      child: Text('Saving'),
+                    ),
+                    SizedBox(width: 10.0),
+                     SizedBox(height: 5.0),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle category button click
+                      },
+                       style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                      Color.fromRGBO(0, 174, 78, 1),
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
+                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                     RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(30.0), 
+                  ),
+                ),
+                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+               EdgeInsets.all(15.0), // Add margin around the corners
+             ),
+              ),
+                      child: Text('Insurance'),
+                    ),
+                    SizedBox(width: 10.0),
+                    
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle category button click
+                      },
+                      style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                      Color.fromRGBO(0, 174, 78, 1),
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
+                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                     RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(30.0), 
+                  ),
+                ),
+                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+               EdgeInsets.all(15.0), // Add margin around the corners
+             ),
+              ),
+                      child: Text('Taxes'),
                     ),
                     SizedBox(width: 10.0),
                     ElevatedButton(
                       onPressed: () {
                         // Handle category button click
                       },
-                      child: Text('Category 2'),
-                    ),
-                    SizedBox(width: 10.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Handle category button click
-                      },
-                      child: Text('Category 3'),
-                    ),
-                    SizedBox(width: 10.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Handle category button click
-                      },
-                      child: Text('Category 4'),
-                    ),
-                    SizedBox(width: 10.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Handle category button click
-                      },
-                      child: Text('Category 5'),
+                       style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                      Color.fromRGBO(0, 174, 78, 1),
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
+                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                     RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(30.0), 
+                  ),
+                ),
+                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+               EdgeInsets.all(15.0), // Add margin around the corners
+             ),
+              ),
+                      child: Text('Behavioral Finace'),
                     ),
                   ],
                 ),
@@ -236,7 +312,7 @@ class LearnPage extends StatelessWidget {
               label: 'Analytics',
             ),
           ],
-          selectedItemColor: Colors.blue,
+          selectedItemColor: Color.fromRGBO(0, 174, 78, 1),
           unselectedItemColor: Colors.grey,
           currentIndex: 1, // The index of the current tab (Learn in this case)
           onTap: (int index) {
