@@ -294,6 +294,7 @@ class LearnPage extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed, // Ensures equal space for all tabs
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -314,7 +315,7 @@ class LearnPage extends StatelessWidget {
           ],
           selectedItemColor: Color.fromRGBO(0, 174, 78, 1),
           unselectedItemColor: Colors.grey,
-          currentIndex: 1, // The index of the current tab (Learn in this case)
+          currentIndex: 0, // The index of the current tab (Home in this case)
           onTap: (int index) {
             // Handle navigation to different tabs
             // You can use a Navigator or any other navigation logic here
@@ -323,4 +324,4 @@ class LearnPage extends StatelessWidget {
       ),
     );
   }
-}
+ }
