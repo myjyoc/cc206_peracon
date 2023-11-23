@@ -23,9 +23,9 @@ class LearnPage extends StatelessWidget {
                       hintText: 'Search',
                       border: InputBorder.none,
                       suffixIcon: Icon(Icons.search, 
-                      color: Color.fromARGB(255, 33, 243, 40)),
+                      color: Color.fromRGBO(16, 114, 86, 0.912)),
                       contentPadding: EdgeInsets.fromLTRB(10, 15, 0, 0),
-                       hintStyle: TextStyle(color: Colors.green), // Set hint text color to green
+                       hintStyle: TextStyle(color: Color.fromRGBO(16, 114, 86, 0.912)), // Set hint text color to green
                     ),
                     onChanged: (value) {
                       // Perform search here
@@ -35,8 +35,8 @@ class LearnPage extends StatelessWidget {
               ),
               IconButton(
                 icon: CircleAvatar(
-                  backgroundColor: Colors.black,
-                  child: Icon(Icons.person, color: Colors.white),
+                  backgroundColor: Color.fromRGBO(16, 114, 86, 0.912),
+                  child: Icon(Icons.person, color: Color.fromARGB(255, 255, 255, 255)),
                 ),
                 onPressed: () {
                   // Profile action here
@@ -68,7 +68,7 @@ class LearnPage extends StatelessWidget {
                       child: Text(
                         'See All',
                         style: TextStyle(
-                          color: const Color.fromARGB(255, 33, 243, 40),
+                          color: const Color.fromRGBO(16, 114, 86, 0.912),
                         ),
                       ),
                     ),
@@ -82,36 +82,40 @@ class LearnPage extends StatelessWidget {
                   // Handle click on the headline news
                 },
                 child: Container(
-                  margin: EdgeInsets.all(16.0),
-                  child: Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: [
-                      Image.network(
-                        'https://cf.ltkcdn.net/family/images/orig/277805-1600x1066-filipino-culture-traditions.jpg',
-                        height: 210.0,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                      ),
-                      Container(
-                        color: Colors.black.withOpacity(0.5),
-                        child: Text(
-                          'Empowering the Future: Bridging the Gap with Financial Education for Filipino Millennials',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+  margin: EdgeInsets.all(16.0),
+  child: ClipRRect(
+    borderRadius: BorderRadius.circular(15.0), // Adjust the border radius as needed
+    child: Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        Image.network(
+          'https://cf.ltkcdn.net/family/images/orig/277805-1600x1066-filipino-culture-traditions.jpg',
+          height: 210.0,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        Container(
+          color: Colors.black.withOpacity(0.5),
+          child: Text(
+            'Empowering the Future: Bridging the Gap with Financial Education for Filipino Millennials',
+            style: TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    ),
+  ),
+)
+
               ),
 
               // Category Buttons Section
               Container(
                height: 50.0,
-                margin: EdgeInsets.all(16.0),
+                margin: EdgeInsets.all(8.0),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
@@ -121,9 +125,9 @@ class LearnPage extends StatelessWidget {
                       },
                       style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromRGBO(0, 174, 78, 1),
+                      Color.fromRGBO(16, 114, 86, 0.912), 
                       ),
-                      minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
+                      minimumSize: MaterialStateProperty.all(Size(50.0, 1.0)), 
                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                      RoundedRectangleBorder(
                      borderRadius: BorderRadius.circular(30.0), 
@@ -143,7 +147,7 @@ class LearnPage extends StatelessWidget {
                       },
                       style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromRGBO(0, 174, 78, 1),
+                      Color.fromRGBO(16, 114, 86, 0.912),
                       ),
                       minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -165,7 +169,7 @@ class LearnPage extends StatelessWidget {
                       },
                        style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromRGBO(0, 174, 78, 1),
+                      Color.fromRGBO(16, 114, 86, 0.912),
                       ),
                       minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -187,7 +191,7 @@ class LearnPage extends StatelessWidget {
                       },
                       style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromRGBO(0, 174, 78, 1),
+                      Color.fromRGBO(16, 114, 86, 0.912),
                       ),
                       minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -208,7 +212,7 @@ class LearnPage extends StatelessWidget {
                       },
                        style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromRGBO(0, 174, 78, 1),
+                      Color.fromRGBO(16, 114, 86, 0.912),
                       ),
                       minimumSize: MaterialStateProperty.all(Size(100.0, 5.0)), 
                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -233,31 +237,34 @@ class LearnPage extends StatelessWidget {
                   // Handle click on News 1
                 },
                 child: Container(
-                  margin: EdgeInsets.all(16.0),
-                  child: Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: [
-                      Image.network(
-                        'https://media.philstar.com/images/the-philippine-star/lifestyle/arts-and-culture/20170528/PHILSTAR/BUSINESS%20FEATURES/usual/financial.jpg',
-                        height: 180.0,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                      ),
-                      Container(
-                        color: Colors.black.withOpacity(0.5),
-                        child: Text(
-                          'Filipinos Financial Literacy: What Numbers Say and Why It Matters',
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+  margin: EdgeInsets.all(16.0),
+  child: ClipRRect(
+    borderRadius: BorderRadius.circular(15.0), // Adjust the border radius as needed
+    child: Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        Image.network(
+          'https://media.philstar.com/images/the-philippine-star/lifestyle/arts-and-culture/20170528/PHILSTAR/BUSINESS%20FEATURES/usual/financial.jpg',
+          height: 180.0,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        Container(
+          color: Colors.black.withOpacity(0.5),
+          child: Text(
+            'Filipinos Financial Literacy: What Numbers Say and Why It Matters',
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    ),
+  ),
+)
+),
 
               // News 2
               GestureDetector(
@@ -265,30 +272,34 @@ class LearnPage extends StatelessWidget {
                   // Handle click on News 2
                 },
                 child: Container(
-                  margin: EdgeInsets.all(16.0),
-                  child: Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: [
-                      Image.network(
-                        'https://media.philstar.com/photos/2023/05/22/1_2023-05-22_15-11-18276_thumbnail.jpg',
-                        height: 180.0,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                      ),
-                      Container(
-                        color: Colors.black.withOpacity(0.5),
-                        child: Text(
-                          'Empowering the Future: Educators Focus on Instilling Financial Education Among Youth',
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+  margin: EdgeInsets.all(16.0),
+  child: ClipRRect(
+    borderRadius: BorderRadius.circular(15.0), // Adjust the border radius as needed
+    child: Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        Image.network(
+          'https://media.philstar.com/photos/2023/05/22/1_2023-05-22_15-11-18276_thumbnail.jpg',
+          height: 180.0,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        Container(
+          color: Colors.black.withOpacity(0.5),
+          child: Text(
+            'Empowering the Future: Educators Focus on Instilling Financial Education Among Youth',
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    ),
+  ),
+)
+
               ),
             ],
           ),
@@ -313,7 +324,7 @@ class LearnPage extends StatelessWidget {
               label: 'Analytics',
             ),
           ],
-          selectedItemColor: Color.fromRGBO(0, 174, 78, 1),
+          selectedItemColor: Color.fromRGBO(16, 114, 86, 0.912),
           unselectedItemColor: Colors.grey,
           currentIndex: 0, // The index of the current tab (Home in this case)
           onTap: (int index) {
@@ -324,4 +335,4 @@ class LearnPage extends StatelessWidget {
       ),
     );
   }
- }
+  }
