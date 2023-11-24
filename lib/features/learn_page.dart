@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'NewsDetailPage.dart';
 
 class LearnPage extends StatelessWidget {
   const LearnPage({Key? key});
@@ -82,6 +83,15 @@ class LearnPage extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   // Handle click on the headline news
+                   Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NewsDetailPage(
+          'Empowering the Future: Bridging the Gap with Financial Education for Filipino Millennials',
+          'https://cf.ltkcdn.net/family/images/orig/277805-1600x1066-filipino-culture-traditions.jpg',
+        ),
+      ),
+    );
                 },
                 child: Container(
                   height: 210.0, // Fixed height
