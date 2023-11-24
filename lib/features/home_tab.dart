@@ -294,7 +294,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildCircleIcon(IconData icon, String label, String figure, Color iconColor, Color bgColor, Color figureColor) {
-    return Column(
+  return Expanded(
+    child: Column(
       children: [
         Container(
           margin: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 3.0),
@@ -330,8 +331,10 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
+    ),
+  );
+}
+
 
   Widget _buildGoalBox(IconData icon, String description, String price, int completionPercent) {
     return Container(
