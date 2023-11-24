@@ -1,5 +1,30 @@
 import 'package:flutter/material.dart';
 
+class CurvePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    var paint = Paint();
+    paint.color = Color(0xFF215757);
+    paint.style = PaintingStyle.fill;
+
+    var path = Path();
+
+    path.moveTo(0, size.height * 0.15);
+    path.quadraticBezierTo(
+        size.width / 2, size.height / 2, size.width, size.height * 0.15);
+    path.lineTo(size.width, 0);
+    path.lineTo(0, 0);
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key});
 
@@ -9,7 +34,7 @@ class HomePage extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           elevation: 0.0,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Color(0xFF215757), // Set the color for the app bar
           title: Row(
             children: [
               Expanded(
@@ -19,9 +44,10 @@ class HomePage extends StatelessWidget {
                     Text(
                       'Welcome',
                       style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        fontSize: 14.0,
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ],
@@ -29,8 +55,8 @@ class HomePage extends StatelessWidget {
               ),
               IconButton(
                 icon: CircleAvatar(
-                  backgroundColor: Colors.black,
-                  child: Icon(Icons.person, color: Colors.white, size: 24.0),
+                  backgroundColor: Colors.white,
+                  child: Icon(Icons.person, color: Color(0xFF215757), size: 24.0),
                 ),
                 onPressed: () {
                   // Profile action here
@@ -39,18 +65,22 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+        body: CustomPaint(
+          painter: CurvePainter(),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
               // User Name Section
               Container(
                 margin: EdgeInsets.fromLTRB(16.0, 3.0, 3.0, 3.0),
                 child: Text(
                   'Rhowena Alimeos',
                   style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -70,19 +100,39 @@ class HomePage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'My Balance',
-                          style: TextStyle(
-                            color: Color(0xFF215757),
-                            fontSize: 18.0,
-                          ),
+                        Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xFFFFF2E5), // Background color for the icon
+                              ),
+                              padding: EdgeInsets.all(8.0), // Adjust padding as needed
+                              child: Icon(
+                                Icons.attach_money, // You can change the icon accordingly
+                                size: 20.0,
+                                color: Color(0xFFF49A40), // Icon color
+                              ),
+                            ),
+                            SizedBox(width: 8.0), // Adjust spacing as needed
+                            Text(
+                              'My Balance',
+                              style: TextStyle(
+                                color: Color(0xFF215757),
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Poppins',
+                              ),
+                            ),
+                          ],
                         ),
                         Text(
-                          'P100,000', // Replace with actual balance
+                          '₱24,861.7', // Replace with actual balance
                           style: TextStyle(
                             color: Color(0xFF215757),
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppins',
                           ),
                         ),
                       ],
@@ -91,10 +141,10 @@ class HomePage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        _buildCircleIcon(Icons.account_balance, 'Savings', 'P60,000', Color(0xFF27C153), Color(0xFFE7F7EC)),
-                        _buildCircleIcon(Icons.attach_money, 'Income', 'P20,000', Color(0xFFD64BC2), Color(0xFFF3E7F8)),
-                        _buildCircleIcon(Icons.money_off, 'Expenses', 'P10,000', Color(0xFFFF4437), Color(0xFFFFEBEA)),
-                        _buildCircleIcon(Icons.credit_card, 'Debts', 'P30,000', Colors.black, Colors.grey[300]!),
+                        _buildCircleIcon(Icons.account_balance, 'Savings', '₱24,861.7', Color(0xFF27C153), Color(0xFFDDFFE7), Color(0xFF27C153)),
+                        _buildCircleIcon(Icons.attach_money, 'Income', '₱44,862.35 ', Color(0xFFD64BC2), Color(0xFFFFDFF6), Color(0xFFD64BC2)),
+                        _buildCircleIcon(Icons.money_off, 'Expenses', '₱44,862.35 ', Color(0xFFFF4437), Color(0xFFFFEBEA), Color(0xFFFF4437)),
+                        _buildCircleIcon(Icons.credit_card, 'Debts', '₱13,145.65', Colors.black, Colors.grey[300]!, Colors.black),
                       ],
                     ),
                   ],
@@ -107,15 +157,17 @@ class HomePage extends StatelessWidget {
                 child: Text(
                   'Tips',
                   style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins',
+                    color: Color(0xFF215757),
                   ),
                 ),
               ),
               // Two boxes with icons and finance tips text
-              _buildTipsBox(Icons.home, 'Income Tip', "You're spending a significant portion of your income on housing. Consider exploring ways to reduce your housing costs, such as downsizing, finding roommates, or negotiating your rent.", Colors.blue),
+              _buildTipsBox(Icons.home, 'Income Tip', "You're spending a significant portion of your income on housing. Consider exploring ways to reduce your housing costs, such as downsizing, finding roommates, or negotiating your rent.", Color(0xFFFFEBEA), Color(0xFFFF4437)),
               SizedBox(height: 8.0),
-              _buildTipsBox(Icons.trending_down, 'Debt Tip', "You have the opportunity to pay your debt using your available savings. Consider allocating a portion of your savings towards debt repayment. By utilizing your savings to pay off your debt, you can eliminate the financial burden sooner and achieve peace of mind.", Colors.orange),
+              _buildTipsBox(Icons.credit_card, 'Debt Tip', "You have the opportunity to pay your debt using your available savings. Consider allocating a portion of your savings towards debt repayment. By utilizing your savings to pay off your debt, you can eliminate the financial burden sooner and achieve peace of mind.", Color(0xFFDDFFE7), const Color.fromARGB(255, 0, 0, 0)),
 
               // Goals Section
               Padding(
@@ -126,16 +178,19 @@ class HomePage extends StatelessWidget {
                     Text(
                       'Goals',
                       style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Poppins',
+                        color: Color(0xFF215757),
                       ),
                     ),
                     Text(
                       'View all',
                       style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Poppins',
+                        color: Color(0xFF215757),
                       ),
                     ),
                   ],
@@ -150,6 +205,7 @@ class HomePage extends StatelessWidget {
               // Add widgets, images, etc. as needed
             ],
           ),
+        ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed, // Ensures equal space for all tabs
@@ -194,7 +250,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildTipsBox(IconData icon, String title, String content, Color boxColor) {
+  Widget _buildTipsBox(IconData icon, String title, String content, Color boxColor, Color iconColor) {
     return Container(
       padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
       margin: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 3.0),
@@ -208,13 +264,12 @@ class HomePage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white,
             ),
             padding: EdgeInsets.all(5.0),
             child: Icon(
               icon,
               size: 30.0,
-              color: boxColor,
+              color: iconColor,
             ),
           ),
           SizedBox(width: 16.0),
@@ -225,7 +280,9 @@ class HomePage extends StatelessWidget {
                 Text(
                   content,
                   style: TextStyle(
-                    fontSize: 15.0,
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Poppins',
                   ),
                 ),
               ],
@@ -236,7 +293,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildCircleIcon(IconData icon, String label, String figure, Color iconColor, Color bgColor) {
+  Widget _buildCircleIcon(IconData icon, String label, String figure, Color iconColor, Color bgColor, Color figureColor) {
     return Column(
       children: [
         Container(
@@ -248,7 +305,7 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.all(12.0),
           child: Icon(
             icon,
-            size: 30.0,
+            size: 25.0,
             color: iconColor,
           ),
         ),
@@ -256,16 +313,20 @@ class HomePage extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            fontSize: 12.0,
-            fontWeight: FontWeight.bold,
+            fontSize: 14.0,
+            fontWeight: FontWeight.w400,
+            fontFamily: 'Poppins',
+            color: Color(0xFF215757),
           ),
         ),
         SizedBox(height: 2.0),
         Text(
           figure,
           style: TextStyle(
-            fontSize: 14.0,
-            fontWeight: FontWeight.bold,
+            fontSize: 12.0,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Poppins',
+            color: figureColor,
           ),
         ),
       ],
@@ -296,7 +357,7 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.all(5.0),
                     child: Icon(
                       icon,
-                      size: 30.0,
+                      size: 25.0,
                       color: Color(0xFF215757),
                     ),
                   ),
@@ -307,15 +368,18 @@ class HomePage extends StatelessWidget {
                       Text(
                         description,
                         style: TextStyle(
-                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Poppins',
+                          color: Color(0xFF215757),
                         ),
                       ),
                       SizedBox(height: 8.0),
                       Text(
                         price,
                         style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 10.5,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Poppins',
                         ),
                       ),
                     ],
@@ -328,7 +392,7 @@ class HomePage extends StatelessWidget {
             '$completionPercent%',
             style: TextStyle(
               fontSize: 14.0,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w500,
               color: Color(0xFF215757),
             ),
           ),

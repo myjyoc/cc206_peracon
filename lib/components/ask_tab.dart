@@ -21,7 +21,7 @@ class _AskPageState extends State<AskPage> {
           title: Row(
             children: [
               IconButton(
-                icon: Icon(Icons.menu, color: Colors.black),
+                icon: Icon(Icons.menu, color: Color(0xFF215757), size: 25.0),
                 onPressed: () {
                   // Handle menu button press
                 },
@@ -44,13 +44,14 @@ class _AskPageState extends State<AskPage> {
                           Text(
                             'New Chat',
                             style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Poppins',
+                              color: Color(0xFF818181),
                             ),
                           ),
                           SizedBox(width: 5.0),
-                          Icon(Icons.add, color: Colors.black, size: 24.0),
+                          Icon(Icons.add, color: Color(0xFF818181), size: 15.0),
                         ],
                       ),
                     ),
@@ -59,7 +60,7 @@ class _AskPageState extends State<AskPage> {
               ),
               IconButton(
                 icon: CircleAvatar(
-                  backgroundColor: Colors.black,
+                  backgroundColor: Color(0xFF215757),
                   child: Icon(Icons.person, color: Colors.white, size: 24.0),
                 ),
                 onPressed: () {
@@ -165,12 +166,15 @@ class _AskPageState extends State<AskPage> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: 'Ask a question..',
+                hintStyle: TextStyle(fontWeight: FontWeight.w600,
+            fontFamily: 'Nunito',),
                 contentPadding: EdgeInsets.fromLTRB(15, 0, 0, 0),
               ),
             ),
           ),
           IconButton(
-            icon: Icon(Icons.send),
+            icon: Icon(Icons.send, color:Color(0xFF215757)),
+            
             onPressed: () {
               _sendMessage();
             },
@@ -207,7 +211,7 @@ class _AskPageState extends State<AskPage> {
       ),
       child: Text(
         question,
-        style: TextStyle(fontSize: 25.0, color: Colors.white),
+        style: TextStyle(fontSize: 20.0, color: Colors.white, fontFamily: 'Poppins', fontWeight: FontWeight.w600,),
       ),
     );
   }
