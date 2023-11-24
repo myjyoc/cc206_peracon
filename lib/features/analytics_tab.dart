@@ -1,7 +1,6 @@
+import 'package:cc206_peracon/components/DebtToIncomeRatioTab.dart';
+import 'package:cc206_peracon/components/IncomeExpenseAnalysisTab.dart';
 import 'package:flutter/material.dart';
-
-import '../components/DebtToIncomeRatioTab.dart';
-import '../components/IncomeExpenseAnalysisTab.dart';
 
 class AnalyticsPage extends StatelessWidget {
   const AnalyticsPage({Key? key});

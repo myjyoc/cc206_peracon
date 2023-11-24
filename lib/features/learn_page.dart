@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'NewsDetailPage.dart';
 
 class LearnPage extends StatelessWidget {

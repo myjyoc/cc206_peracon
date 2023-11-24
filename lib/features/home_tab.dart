@@ -303,7 +303,7 @@ class HomePage extends StatelessWidget {
             shape: BoxShape.circle,
             color: bgColor,
           ),
-          padding: EdgeInsets.all(12.0),
+          padding: EdgeInsets.fromLTRB(8, 16.0, 16.0, 16.0), // Increase padding to center the icon
           child: Icon(
             icon,
             size: 25.0,
@@ -334,6 +334,7 @@ class HomePage extends StatelessWidget {
     ),
   );
 }
+
 
 
   Widget _buildGoalBox(IconData icon, String description, String price, int completionPercent) {
