@@ -227,7 +227,7 @@ class HomePage extends StatelessWidget {
               label: 'Analytics',
             ),
           ],
-          selectedItemColor: Color.fromRGBO(16, 114, 86, 0.912),
+          selectedItemColor: Color(0xFF215757),
           unselectedItemColor: Colors.grey,
           currentIndex: 0, // The index of the current tab (Home in this case)
           onTap: (int index) {
