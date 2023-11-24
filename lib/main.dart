@@ -1,6 +1,6 @@
-import 'package:cc206_peracon/components/analytics_tab.dart';
-import 'package:cc206_peracon/components/ask_tab.dart';
-import 'package:cc206_peracon/components/home_tab.dart';
+import 'package:cc206_peracon/features/analytics_tab.dart';
+import 'package:cc206_peracon/features/ask_tab.dart';
+import 'package:cc206_peracon/features/home_tab.dart';
 import 'package:cc206_peracon/features/learn_page.dart';
 import 'package:flutter/material.dart';
 
