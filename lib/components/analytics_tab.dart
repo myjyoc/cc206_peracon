@@ -34,18 +34,18 @@ class AnalyticsPage extends StatelessWidget {
                       'Analytics',
                       style: TextStyle(
                         fontFamily: 'Poppins',
-                        fontSize: 35.0,
+                        fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
-                       textAlign: TextAlign.center,
+                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),
               ),
               IconButton(
                 icon: CircleAvatar(
-                  backgroundColor: Colors.black,
+                  backgroundColor: Color(0xFF215757),
                   child: Icon(Icons.person, color: Colors.white, size: 24.0),
                 ),
                 onPressed: () {

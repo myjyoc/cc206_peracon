@@ -58,7 +58,7 @@ class LearnPage extends StatelessWidget {
                       'Recommended for You',
                       style: TextStyle(
                         fontFamily: 'Poppins',
-                        fontSize: 20.0,
+                        fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -69,7 +69,7 @@ class LearnPage extends StatelessWidget {
                       child: Text(
                         'See All',
                         style: TextStyle(
-                           fontSize: 17.0,
+                          fontSize: 12.0,
                           color: Color.fromARGB(192, 177, 157, 23),
                         ),
                       ),
