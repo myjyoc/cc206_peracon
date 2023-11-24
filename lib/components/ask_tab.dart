@@ -106,7 +106,7 @@ class _AskPageState extends State<AskPage> {
               label: 'Analytics',
             ),
           ],
-          selectedItemColor: Colors.blue,
+          selectedItemColor: Color(0xFF215757),
           unselectedItemColor: Colors.grey,
           currentIndex: 2,
           onTap: (int index) {
